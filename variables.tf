@@ -51,9 +51,9 @@ variable "product_prefix" {
    type = any
  }
 
-# variable "tags" {
-#   type = map(string)
-# }
+ variable "tags" {
+   type = map(string)
+ }
  variable "vpc_region" {
    type=string
  }
