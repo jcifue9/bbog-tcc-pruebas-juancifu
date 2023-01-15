@@ -1,9 +1,10 @@
-
+locals {
+  account_id     = module.utilities.account_id
+  
+}
   module "utilities" {
      source = "github.com/bancodebogota/bbog-dig-aws-utilities-iac?ref=v0.2.0"
-providers = {
-    aws = aws.virginia
-  }
+
 
   r53_domains = [var.route53_domain]
   }
@@ -32,9 +33,7 @@ module "backend" {
 }
 module "networking" {
   source = "./components/networking"
-providers = {
-    aws = aws.virginia
-  }
+
  
  vpc_cidr_virginia                 = var.vpc_cidr_virginia
   vpc_azs_virginia                  = var.vpc_azs_virginia
@@ -44,8 +43,8 @@ providers = {
   vpc_enable_nat_gateway_virginia   = var.vpc_enable_nat_gateway_virginia
   #nat_gateways_count_virginia       = var.nat_gateways_count_virginia
   product_prefix                    = var.product_prefix
-   route53_domain                                                = var.route53_domain
-  r53_phz_domain                                                = var.r53_phz_domain
+  route53_domain                                                = var.route53_domain
+  #r53_phz_domain                                                = var.r53_phz_domain
   #vpc_id                           =module.vpc_virginia.vpc_id
   vpc_region                        =var.vpc_region
   tags                              =var.tags

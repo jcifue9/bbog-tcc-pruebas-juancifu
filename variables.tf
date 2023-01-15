@@ -39,9 +39,9 @@ variable "vpc_enable_nat_gateway_virginia" {
 variable "route53_domain" {
   type    = string
 }
-variable "r53_phz_domain" {
-  type = string
-}
+# variable "r53_phz_domain" {
+#   type = string
+# }
 
 variable "product_prefix" {
   type = string

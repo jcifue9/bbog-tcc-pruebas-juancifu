@@ -46,9 +46,9 @@ variable "tags" {
     type    = string
   }
 
- variable "r53_phz_domain" {
-   type = string
- }
+#  variable "r53_phz_domain" {
+#    type = string
+#  }
   # variable "route53_private_domain" {
   #   type = string
   # }
