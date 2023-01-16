@@ -26,7 +26,7 @@ tags = {
     }
 #route53
 #private_zone=true
-vpc_region="us-west-2"
+vpc_region="us-east-1"
 #ecs_cluster
 #create_cluster =true
  ecs_clusters_capacity_provider_strategy_virginia = [

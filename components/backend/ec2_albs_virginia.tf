@@ -16,11 +16,12 @@
    #private_zone = false
    custom_domains_certificates_indexes = [0]
 
-     custom_domains = [
-     {
-       name    = "alb.${var.route53_domain}"
-       zone_id = var.public_r53_zone_ids[0]
-     }
+    custom_domains = [
+    {
+      name    = "nlb.${var.route53_domain}"
+      zone_id = var.public_r53_zone_ids[0]
+    },
+  ]
      
-   ]
+   
  }

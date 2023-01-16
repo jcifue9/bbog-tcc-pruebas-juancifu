@@ -42,9 +42,9 @@ variable "tags" {
 # variable "private_zone" {
 #   type=bool
 #  }
-  variable "route53_domain" {
-    type    = string
-  }
+  # variable "route53_domain" {
+  #   type    = string
+  # }
 
 #  variable "r53_phz_domain" {
 #    type = string
