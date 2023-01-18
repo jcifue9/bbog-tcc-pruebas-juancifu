@@ -11,14 +11,6 @@ jobs:
     permissions:
       id-token: write # need this for OIDC
       contents: read
-      with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
-          working-directory: ./
-          env: qa
-          build-dir: build
-          secrets: inherit
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
