@@ -15,7 +15,7 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-      working-directory: .
+      working-directory: ./
       env: qa
       build-dir: build
     secrets: inherit
@@ -31,7 +31,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: npm install
-        working-directory: ./terraform_test
+        working-directory: ./
         env:
           CI: true
         run: |
