@@ -6,7 +6,7 @@ on:
       - qa
 
 jobs:
-  apply:
+  Deploy_aws:
      runs-on: ubuntu-latest
      permissions:
       id-token: write
