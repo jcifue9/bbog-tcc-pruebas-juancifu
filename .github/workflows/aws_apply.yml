@@ -8,10 +8,7 @@ on:
 jobs:
   deploy_lambda:
     runs-on: ubuntu-latest
-      permissions:
-      id-token: write
-      contents: read
-    env:
+     env:
       AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
       AWS_DEFAULT_REGION: us-east-1
     steps:
