@@ -1,49 +1,12 @@
- name: AWS DEPLOY
+name: Deploy
 
- on:
-   push:
-     branches:
-#       - qa
-#      ## - feature/*
+on:
+  push:
+    branches:
+      - main
 
- jobs:
-#   apply:
-#     runs-on: ubuntu-latest
-#     # permissions:
-#     #   id-token: write
-#     #   contents: read
-#     env:
-#       AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-#     environment: qa
-#     steps:
-#       - uses: actions/checkout@v2
-#       - uses: actions/setup-node@v2
-#         with:
-#           node-version: "14"
-#       - name: Configure AWS credentials
-#         uses: aws-actions/configure-aws-credentials@v1
-#         with:
-#           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-#           role-to-assume: ${{ secrets.ASSUMABLE_ROLE_ARN }}
-#           aws-region: us-east-1
-#       - name: npm install
-#         working-directory: ./
-#         env:
-#           CI: true
-#         run: |
-#           pwd
-#           npm ci --only=prod
-#       - uses: hashicorp/setup-terraform@v2
-#       - name: Terraform init
-#         id: init
-#         run: terraform init
-#       - name: Terraform plan
-#         id: plan
-#         run: terraform plan
-#       - name: Terraform apply
-#         id: apply
-#         run: terraform apply -auto-approve -input=false
- apply:
+jobs:
+  deploy_lambda:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -53,8 +16,8 @@
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID}}
-          ASSUMABLE_ROLE_ARN : ${{ secrets.ASSUMABLE_ROLE_ARN  }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: npm install
         working-directory: ./terraform_test
