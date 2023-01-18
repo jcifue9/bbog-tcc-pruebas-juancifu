@@ -17,7 +17,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-          role-to-assume: ${{ secrets.ASSUMABLE_ROLE_ARN }}
+          ASSUMABLE_ROLE_ARN : ${{ secrets.ASSUMABLE_ROLE_ARN }}
           aws-region: us-east-1
       - name: npm install
         working-directory: ./
