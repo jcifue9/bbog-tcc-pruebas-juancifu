@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - qa
-      -feature/*
+      - feature/*
 
 jobs:
   deploy_lambda:
