@@ -8,11 +8,6 @@ on:
 jobs:
   deploy_lambda:
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
-    env:
-      AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -21,8 +16,8 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          #AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          role-to-assume: ${{ secrets.ASSUMABLE_ROLE_ARN }}
+          aws-access-key-id: ${{ secrets.AWS_ACCOUNT_ID }}
+          aws-secret-access-key: ${{ secrets.ASSUMABLE_ROLE_ARN }}
           aws-region: us-east-1
       - name: npm install
         working-directory: ./
