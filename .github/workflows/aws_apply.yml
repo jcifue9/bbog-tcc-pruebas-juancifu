@@ -7,9 +7,10 @@ on:
 
 jobs:
   deploy_lambda:
-  permissions:
-      id-token: write # need this for OIDC
+  
     runs-on: ubuntu-latest
+    permissions:
+    id-token: write # need this for OIDC
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
