@@ -8,8 +8,17 @@ on:
 jobs:
   deploy_lambda:
     runs-on: ubuntu-latest
+      build:
     permissions:
-      id-token: write
+      id-token: write # need this for OIDC
+      contents: read
+    uses: ./.github/workflows/aws_apply.yml@latest
+    with:
+      # for multi-repo, set it as "." (current directory); for monorepo, specify the file path for UI, such as "./frontend"
+      working-directory: .
+      env: qa
+      build-dir: build
+    secrets: inherit
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
