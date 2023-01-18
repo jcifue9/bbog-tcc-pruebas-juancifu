@@ -8,10 +8,9 @@ on:
 jobs:
 
   Deploy_aws:
+    name: Deploy
      runs-on: ubuntu-latest
-     permissions:
-      id-token: write
-      contents: read
+     
     
     steps:
       - uses: actions/checkout@v2
