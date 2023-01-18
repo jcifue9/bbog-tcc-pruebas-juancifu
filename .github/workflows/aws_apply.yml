@@ -6,14 +6,13 @@ on:
       - qa
 
 jobs:
+
   Deploy_aws:
      runs-on: ubuntu-latest
      permissions:
       id-token: write
       contents: read
-     env:
-      AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-      AWS_DEFAULT_REGION: ${{ inputs.aws_region }}
+    
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
