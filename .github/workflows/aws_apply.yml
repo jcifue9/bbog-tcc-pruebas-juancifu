@@ -8,7 +8,6 @@ on:
 jobs:
   deploy_lambda:
     runs-on: ubuntu-latest
-      build:
     permissions:
       id-token: write # need this for OIDC
       contents: read
