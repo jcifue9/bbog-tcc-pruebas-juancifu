@@ -7,6 +7,8 @@ on:
 
 jobs:
   deploy_lambda:
+  permissions:
+      id-token: write # need this for OIDC
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,7 +19,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-          ASSUMABLE_ROLE_ARN : ${{ secrets.ASSUMABLE_ROLE_ARN }}
+          role-to-assume: ${{ secrets.ASSUMABLE_ROLE_ARN }}
           aws-region: us-east-1
       - name: npm install
         working-directory: ./
