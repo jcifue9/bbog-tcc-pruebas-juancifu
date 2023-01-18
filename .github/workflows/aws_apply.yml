@@ -8,7 +8,7 @@ on:
 jobs:
   deploy_lambda:
     runs-on: ubuntu-latest
-     permissions:
+    permissions:
       id-token: write
       contents: read
     env:
