@@ -6,13 +6,14 @@ on:
       - qa
 
 jobs:
-  deploy_lambda:
-  
+  apply:
     runs-on: ubuntu-latest
-    build:
     permissions:
-    id-token: write # need this for OIDC
-    contents: read
+      id-token: write
+      contents: read
+     env:
+      AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+      AWS_DEFAULT_REGION: ${{ inputs.aws_region }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
