@@ -1,12 +1,12 @@
-# name: AWS DEPLOY
+ name: AWS DEPLOY
 
-# on:
-#   push:
-#     branches:
+ on:
+   push:
+     branches:
 #       - qa
 #      ## - feature/*
 
-# jobs:
+ jobs:
 #   apply:
 #     runs-on: ubuntu-latest
 #     # permissions:
@@ -43,7 +43,7 @@
 #       - name: Terraform apply
 #         id: apply
 #         run: terraform apply -auto-approve -input=false
- deploy_laws:
+ apply:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
