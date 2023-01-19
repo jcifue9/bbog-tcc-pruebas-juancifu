@@ -14,9 +14,9 @@ jobs:
       AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     steps:
       - name: Checkout Repo
-         uses: actions/checkout@v2
+         - uses: actions/checkout@v2
       - name: Terraform Setup
-         uses: hashicorp/setup-terraform@v1
+         - uses: hashicorp/setup-terraform@v1
       - name: Terraform Init
          run: terraform init
       - name: Terraform Apply
