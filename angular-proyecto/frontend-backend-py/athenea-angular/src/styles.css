@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+.circular--square {
+    display: inline-block;
+  position: relative;
+ 
+  overflow: hidden;
+  border-radius: 50%;
+  }
+  
